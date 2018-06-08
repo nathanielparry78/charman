@@ -3,10 +3,12 @@ import styled from 'styled-components';
 import Monster from './components/Monster/Monster';
 
 
+
 const Form = styled.form`
     position: fixed;
     width: 100%;
     color: maroon;
+    z-index: 100;
 `;
 
 const Filter = styled.input`
@@ -25,7 +27,6 @@ const Submit = styled.input`
 `;
 
 const Results = styled.div`
-    padding-top: 4em;
 `;
 
 const Clear = styled.button`
@@ -41,7 +42,6 @@ const Clear = styled.button`
     box-shadow: none;
     border-color: transparent;
 `;
-
 
 class Monsters extends Component {
     constructor(props) {

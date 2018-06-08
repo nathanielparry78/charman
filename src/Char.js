@@ -53,7 +53,7 @@ class Char extends Component {
                     <HPTracker />
                     <CombatInfo {...info} />
                 </div>
-                <Attributes attributes={attributes} />
+                <Attributes attributes={attributes} saves={true} />
                 <Skills attributes={attributes} info={info}/>
             </BodyStuff>
         </div>

@@ -4,10 +4,26 @@ import { mod } from '../../util/mods.js';
 import Attributes from '../Attributes/Attributes';
 
 // import {beast} from './demo-data';
+import Paper from './torn-paper.jpg'
+
 
 const StatBlock = styled.div`
+    padding-top: 100px;
     text-align: left;
     font-family: serif;
+    background: linear-gradient(white, #ebebeb);
+
+    &:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100px;
+        background: url(${Paper}) #e8e8e8 no-repeat;
+        background-size: cover;
+        background-position: bottom center;
+        margin-top: -10px;
+
+    }
 `;
 
 const Block = styled.div`
@@ -59,7 +75,7 @@ class Monster extends React.Component {
 
     render() {
         let { beast = {} } = this.props;
-        const { creature: { name, size, type, subtype, alignment, armor_class, hit_points, hit_dice, speed, strength, dexterity, constitution, intelligence, wisdom, charisma, damage_vulnerabilities, damage_resistances, damage_immunities, condition_immunitites, senses, skills, languages, challenge_rating, special_abilities, actions } } = this.state;
+        const { creature: { name, size, type, subtype, alignment, armor_class, hit_points, hit_dice, speed, strength, dexterity, constitution, intelligence, wisdom, charisma, damage_vulnerabilities, damage_resistances, damage_immunities, condition_immunities, senses, skills, languages, challenge_rating, special_abilities, actions } } = this.state;
 
         let attributes = [
             { name: "Strength", val: strength },
@@ -84,18 +100,18 @@ class Monster extends React.Component {
                         <li><Stat>Immunities</Stat> {damage_immunities}</li>
                     }
                     {damage_resistances &&
-                        <li><Stat>Immunities</Stat> {damage_resistances}</li>
+                        <li><Stat>Resistances</Stat> {damage_resistances}</li>
                     }
                     {damage_vulnerabilities &&
-                        <li><Stat>Immunities</Stat> {damage_vulnerabilities}</li>
+                        <li><Stat>Vulnerabilities</Stat> {damage_vulnerabilities}</li>
                     }
-                    {condition_immunitites &&
-                        <li><Stat>Immunities</Stat> {condition_immunitites}</li>
+                    {condition_immunities &&
+                        <li><Stat>Condition Immunities</Stat> {condition_immunities}</li>
                     }
 
                 </Block>
 
-                <Attributes attributes={attributes} />
+                <Attributes attributes={attributes} saves={false}/>
 
                 <Block>
                     {skills &&

@@ -5,51 +5,64 @@ import { mod } from '../../util/mods.js'
 const AttBox = styled.div`
     position: relative;
     display: flex;
-    flex-direction: column;
-    width: 250px;
+    flex-direction: row;
     border: 2px solid #ccc;
     margin: .5em;
     border-radius: 5px;
     color: #666;
+    z-index: 10;
+    background: white;
 `;
 
 const AttRow = styled.div`
     display: flex;
-    flex-direction: row;
+    text-align: center;
+    flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     width: 100%;
     padding: 5px 0;
     position: relative;
-    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+
+    ${({end}) => (end ? `justify-content: flex-end; width: 30px;` : null)};
 `;
 
 const AttName = styled.span`
-    font-size: 10px;
+    font-size: 12px;
     text-transform: uppercase;
-    writing-mode: tb-rl;
     height: auto;
-    width: 1em;
     padding: 0 1em;
     align-self: center;
+    text-align: center;
+    font-weight: 600;
     // border-right: 1px solid #ccc;
 `;
 
 const AttVal = styled.span`
-    font-size: 2em;
-    text-align: right;
+    font-size: 1.75em;
+    text-align: center;
     display: block;
     width: 1.25em;
-    padding: 0 .5em;
-    // border-right: 1px solid #ccc;
+    padding: .25em 0;
+
+    ${({att}) => (att ? `color: #999` : null)};
+    ${({mod}) => (mod ? `color: maroon; ` : null)};
+    ${({save}) => (save ? `color: green` : null)};
+
 `;
 
 const AttHead = styled.span`
-    font-size: 10px;
-    text-align: center;
-    display: block;
-    width: 2.5rem;
+    font-size: 12px;
+    writing-mode: tb-rl;
+    height: 2.5rem;
     padding: 0 1rem;
+    font-variant: small-caps;
+    margin-bottom: 5px;
+
+    ${({mod}) => (mod ? `color: maroon` : null)};
+    ${({att}) => (att ? `color: #999` : null)};
+    ${({save}) => (save ? `color: green` : null)};
 `;
 
 class Attributes extends React.Component {
@@ -57,22 +70,24 @@ class Attributes extends React.Component {
     // TODO: Make vertical and horizontal options
 
     render() {
-        const { attributes } = this.props;
+        const { attributes, saves } = this.props;
         return (
             <AttBox>
-                    <AttRow>
+                    <AttRow end>
                         <AttName></AttName>
-                        <AttHead>Score</AttHead>
-                        <AttHead>Mod</AttHead>
-                        <AttHead>Save</AttHead>
+                        <AttHead att>Score</AttHead>
+                        <AttHead mod>Mod</AttHead>
+                        {saves &&
+                            <AttHead save>Save</AttHead>
+                        }
                     </AttRow>
                 {attributes.map(att => (
                     <AttRow key={att.name}>
                         <AttName>{att.name.slice(0, 3)}</AttName>
-                        <AttVal>{att.val}</AttVal>
-                        <AttVal>{mod(att.val)}</AttVal>
+                        <AttVal att>{att.val}</AttVal>
+                        <AttVal mod>{mod(att.val)}</AttVal>
                         {att.class &&
-                            <AttVal>{mod(att.val)}</AttVal>
+                            <AttVal save>{mod(att.val)}</AttVal>
                         }
                     </AttRow>
                 ))}

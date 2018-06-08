@@ -30,13 +30,14 @@ const Dot = styled.div`
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    border: 2px solid #cccccc;
+    border: 2px solid #888;
+    box-shadow: inset 0px 0px 5px #888;
     color: transparent;
     background-position: -12px -12px;
     position: absolute;
     bottom: 2vh;
     cursor: pointer;
-    opacity: .3;
+    opacity: .4;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -46,7 +47,10 @@ const Dot = styled.div`
 
     ${({active}) => (active
         ? `transform: scale(2);
-            opacity: 1;`
+            opacity: 1;
+            box-shadow: inset 0px 0px 5px #888;
+            border: 1px solid #aaa;
+            `
         : null
     )};
 `;
@@ -67,6 +71,7 @@ const MenuItem = styled.div`
     background-size: 35px 35px;
     background-repeat: no-repeat;
     background-position: center center;
+    border: 1px solid #999;
 
     ${({active}) => (active ? `transform: scale(2.25); opacity: .8;` : null)};
     ${({img}) => (img ? `background-image: url(${img})` : null)};
