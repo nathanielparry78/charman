@@ -20,6 +20,8 @@ const BodyStuff = styled.div`
     & .topBlock {
         display: flex;
         flex-direction: row;
+        justify-content: stretch;
+        flex-wrap: wrap;
     }
 `;
 
@@ -52,8 +54,8 @@ class Char extends Component {
                 <div className="topBlock">
                     <HPTracker />
                     <CombatInfo {...info} />
+                    <Attributes attributes={attributes} saves={true} />
                 </div>
-                <Attributes attributes={attributes} saves={true} />
                 <Skills attributes={attributes} info={info}/>
             </BodyStuff>
         </div>

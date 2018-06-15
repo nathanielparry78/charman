@@ -12,6 +12,7 @@ const AttBox = styled.div`
     color: #666;
     z-index: 10;
     background: white;
+    // width: 100%;
 `;
 
 const AttRow = styled.div`
@@ -25,7 +26,7 @@ const AttRow = styled.div`
     position: relative;
     border-right: 1px solid #ccc;
 
-    ${({end}) => (end ? `justify-content: flex-end; width: 30px;` : null)};
+    ${({rowEnd}) => (rowEnd ? `justify-content: flex-end; width: 30px;` : null)};
 `;
 
 const AttName = styled.span`
@@ -73,7 +74,7 @@ class Attributes extends React.Component {
         const { attributes, saves } = this.props;
         return (
             <AttBox>
-                    <AttRow end>
+                    <AttRow rowEnd={true}>
                         <AttName></AttName>
                         <AttHead att>Score</AttHead>
                         <AttHead mod>Mod</AttHead>

@@ -6,6 +6,9 @@ import Nav from './components/Nav/Nav.js';
 
 import './App.css';
 
+const Items = () => {}
+const Spells = () => {}
+
 
 class App extends Component {
     constructor(props) {
@@ -30,6 +33,8 @@ class App extends Component {
             <div className="App" id="app">
                 {status === 'char' ? <Char /> : null}
                 {status === 'mon' ? <Monsters /> : null}
+                {status === 'item' ? <Items /> : null}
+                {status === 'spells' ? <Spells /> : null}
 
                 <Nav handlePageStatus={this.handlePageStatus}/>
             </div>

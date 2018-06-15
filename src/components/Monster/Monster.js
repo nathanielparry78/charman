@@ -97,16 +97,16 @@ class Monster extends React.Component {
                     <li><Stat>HP</Stat> {hit_points}  <em><small>&nbsp;({hit_dice})</small></em></li>
                     <li><Stat>Speed</Stat> {speed}</li>
                     {damage_immunities &&
-                        <li><Stat>Immunities</Stat> {damage_immunities}</li>
+                        <li><Stat>Immunities:</Stat> {damage_immunities}</li>
                     }
                     {damage_resistances &&
-                        <li><Stat>Resistances</Stat> {damage_resistances}</li>
+                        <li><Stat>Resistances:</Stat> {damage_resistances}</li>
                     }
                     {damage_vulnerabilities &&
-                        <li><Stat>Vulnerabilities</Stat> {damage_vulnerabilities}</li>
+                        <li><Stat>Vulnerabilities:</Stat> {damage_vulnerabilities}</li>
                     }
                     {condition_immunities &&
-                        <li><Stat>Condition Immunities</Stat> {condition_immunities}</li>
+                        <li><Stat>Condition Immunities:</Stat> {condition_immunities}</li>
                     }
 
                 </Block>
@@ -115,13 +115,13 @@ class Monster extends React.Component {
 
                 <Block>
                     {skills &&
-                        <li><Stat>Skills</Stat> {skills}</li>
+                        <li><Stat>Skills:</Stat> {skills}</li>
                     }
                     {senses &&
-                        <li><Stat>Senses</Stat> {senses}</li>
+                        <li><Stat>Senses:</Stat> {senses}</li>
                     }
                     {languages &&
-                        <li><Stat>Languages</Stat> {languages}</li>
+                        <li><Stat>Languages:</Stat> {languages}</li>
                     }
                 </Block>
 

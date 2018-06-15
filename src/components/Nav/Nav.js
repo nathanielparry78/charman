@@ -11,7 +11,7 @@ const NavContainer = styled.div`
     position: fixed;
     bottom: 2vh;
     left: 50%;
-    z-index: 100;
+    z-index: 1000;
 `;
 
 const Items = styled.div`
@@ -110,7 +110,7 @@ class Nav extends React.Component {
         let { active } = this.state;
         return (
             <NavContainer>
-                <Dot onClick={this.toggleNav} active={active}>+</Dot>
+                <Dot onClick={this.toggleNav} active={active}/>
                 <Items active={active}>
                     <MenuItem img={CharIcon} active={active} onClick={() => this.handleNav('char')} />
                     <MenuItem img={MonIcon} active={active} onClick={() => this.handleNav('mon')} right/>
