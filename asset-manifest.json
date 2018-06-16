@@ -1,8 +1,14 @@
 {
   "main.css": "static/css/main.c17080f1.css",
   "main.css.map": "static/css/main.c17080f1.css.map",
-  "main.js": "static/js/main.ff52f4ba.js",
-  "main.js.map": "static/js/main.ff52f4ba.js.map",
+  "main.js": "static/js/main.abb27dd9.js",
+  "main.js.map": "static/js/main.abb27dd9.js.map",
+  "static/media/backpack.png": "static/media/backpack.84054d56.png",
+  "static/media/book-cover.png": "static/media/book-cover.8b6d0a71.png",
   "static/media/char-icon-black.png": "static/media/char-icon-black.97aa7b49.png",
-  "static/media/monster-icon-black.png": "static/media/monster-icon-black.e2d376d7.png"
+  "static/media/char-icon-white.png": "static/media/char-icon-white.c581fd45.png",
+  "static/media/coins.png": "static/media/coins.5f8794ea.png",
+  "static/media/magic-swirl.png": "static/media/magic-swirl.1596f7ea.png",
+  "static/media/monster-icon-black.png": "static/media/monster-icon-black.e2d376d7.png",
+  "static/media/monster-icon-white.png": "static/media/monster-icon-white.ae05fec8.png"
 }
