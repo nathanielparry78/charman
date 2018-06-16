@@ -5,9 +5,16 @@ import Monsters from './Monsters';
 import Nav from './components/Nav/Nav.js';
 
 import './App.css';
+import CharConverter from './components/CharConverter/CharConverter';
 
 const Items = () => {}
 const Spells = () => {}
+
+const Main = styled.main`
+    background: #232323;
+    width: 100vw;
+    height: 100vh;
+`;
 
 
 class App extends Component {
@@ -15,7 +22,7 @@ class App extends Component {
         super(props);
 
         this.state = {
-            status: 'mon'
+            status: 'charCon'
         }
     }
 
@@ -30,14 +37,15 @@ class App extends Component {
         let { status } = this.state;
 
         return (
-            <div className="App" id="app">
+            <Main className="App" id="app">
                 {status === 'char' ? <Char /> : null}
                 {status === 'mon' ? <Monsters /> : null}
                 {status === 'item' ? <Items /> : null}
                 {status === 'spells' ? <Spells /> : null}
+                {status === 'charCon' ? <CharConverter /> : null}
 
                 <Nav handlePageStatus={this.handlePageStatus}/>
-            </div>
+            </Main>
         );
     }
 }
